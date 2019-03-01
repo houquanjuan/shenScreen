@@ -5,6 +5,7 @@
 
 传参：sysName:系统名称
 	part：中心名称
+	
 传参实例：
 {
 	sysName："综合结算系统"
@@ -12,4 +13,5 @@
 }
 
 返回参数：true/false
+
 返回实例：true
