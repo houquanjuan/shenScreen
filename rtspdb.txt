@@ -1,8 +1,24 @@
-屏幕位置：中左上
-接口名称：4.2.3	DB2数据库性能展示
-接口地址：ws://10.141.84.119:8080/ultraJShow/iwebsocket?id=RTSPDBScreen 
+屏幕位置：左三
+屏幕名称：RTSP数据库
+接口名称：DB2数据库性能推送
+接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=RTSPDBScreen 
 请求方式：websocket
+传参：
+传参示例：
 返回参数：JSON字符串
+		固定参数：
+		screenId:屏号
+		childId:子屏幕
+		data:返回给大屏的数据
+		data数据：
+		screenName:屏幕名称
+		flag:与数据库的连接情况，0为异常，1为正常。实际上将会存在与DB2失去连接的情况，届时将不推送datas，flag变为0，呼吸灯应转为橙色。
+		datas:各项数据(数组)
+			|_currents:当前值
+			|_maxs:最大值
+			|_mins:最小值
+			|_name:条目名称
+			|_references:参考值
 返回示例：
 {
 	"screenId": "RTSPDBScreen",
