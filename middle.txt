@@ -1,4 +1,5 @@
 屏位置：中上
+屏名称：中国结算
 接口名称：结算系统状态更改
 接口地址："http://192.168.1.123:8080/ultraJShow/result.do?method=updateResult"
 请求方式：http
