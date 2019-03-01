@@ -1,0 +1,31 @@
+屏幕位置：中左上
+接口名称：4.2.3	DB2数据库性能展示
+接口地址：ws://10.141.84.119:8080/ultraJShow/iwebsocket?id=RTSPDBScreen 
+请求方式：websocket
+返回参数：JSON字符串
+返回示例：
+{
+	"screenId": "RTSPDBScreen",
+	"childId": "0",
+	"type": "all",
+	"data": {
+		"screenName": "RTSP数据库",
+		"flag": 1,
+		"datas": [
+			{
+				"currents": "60",
+				"maxs": "120",
+				"mins": "0",
+				"name": "平均活动时间",
+				"references": "70"
+			},
+			{
+				"currents": "5732805",
+				"maxs": "10000000",
+				"mins": "0",
+				"name": "内存",
+				"references": "8000000"
+			}
+		]
+	}
+}
