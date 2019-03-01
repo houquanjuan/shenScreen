@@ -12,7 +12,8 @@
 		data:返回给大屏的数据
 		data数据：
 		screenName:屏幕名称
-		flag:与数据库的连接情况，0为异常，1为正常。实际上将会存在与DB2失去连接的情况，届时将不推送datas，flag变为0，呼吸灯应转为橙色。
+		flag:与数据库的连接情况，1为异常，0为正常。实际上将会存在与DB2失去连接的情况，届时将不推送datas，flag变为0，呼吸灯应转为橙色。
+		dateTime:数据时间
 		datas:各项数据(数组)
 			|_currents:当前值
 			|_maxs:最大值
@@ -26,7 +27,8 @@
 	"type": "all",
 	"data": {
 		"screenName": "RTSP数据库",
-		"flag": 1,
+		"flag": 0,
+		"dateTime": "2019-03-01 18:06",
 		"datas": [
 			{
 				"currents": "60",

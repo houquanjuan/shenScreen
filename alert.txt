@@ -1,0 +1,16 @@
+屏幕位置：左二
+屏幕名称：告警
+接口名称：告警信息推送
+接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=alertScreen
+请求方式：websocket
+传参：
+传参示例：
+返回参数：JSON字符串
+		固定参数：
+		screenId:屏号
+		childId:子屏幕
+		data:返回给大屏的数据
+		data数据：
+		screenName:屏幕名称
+		
+返回示例：
