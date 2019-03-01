@@ -1,0 +1,66 @@
+屏位置：左一
+屏名称：值班信息
+接口名称：值班人员信息推送
+接口地址：url + "dutyScreen"
+请求方式：ws
+
+传参：	
+传参实例：
+
+返回参数：
+           固定参数：
+			screenId:屏号
+			childId:子屏幕
+			data:返回给大屏的数据
+	data数据：
+			screenName：屏名称
+			futianDuties：福田中心值班信息
+					daily：白班值班信息
+					night:夜班值班信息
+			southDuties：南方中心值班信息
+					
+			值班信息：
+					department: 值班人部门
+					name: 值班人名称
+					tel ：值班人电话
+
+
+返回实例：
+{
+	"screenId": "dutyScreen",
+	"childId": "0",
+	"type": "all",
+	"data": {
+		"screenName": "值班信息",
+		"futianDuties": {
+			"daily": [{
+				"department": "值班经理",
+				"name": "霍青娥",
+				"tel": "13559130582"
+			}, {
+				"department": "运维组",
+				"name": "秦心",
+				"tel": "13559130582"
+			}],
+			"night": [{
+				"department": "值班经理",
+				"name": "秋静叶",
+				"tel": "13559130582"
+			}, {
+				"department": "运维组",
+				"name": "铃仙",
+				"tel": "13559130582"
+			}]
+		},
+		"southDuties": [{
+			"department": "值班经理",
+			"name": "丰聪耳",
+			"tel": "13559130582"
+		}, {
+			"department": "运维组",
+			"name": "董风谷",
+			"tel": "13559130582"
+		}]
+	}
+}
+
