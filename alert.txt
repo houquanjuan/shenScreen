@@ -12,5 +12,65 @@
 		data:返回给大屏的数据
 		data数据：
 		screenName:屏幕名称
+		sysAlerts:系统类告警列表
+			|_san:严重告警数量
+			|_man:主要告警数量
+			|_alerts:告警列表(数组)
+			|	|_alertType:告警类型
+			|	|_occurtime:告警时间
+			|	|_severity:告警级别，1为严重，2为主要
+			|___|_title:告警内容
+		appAlerts:应用类告警列表
+			|_san:严重告警数量
+			|_man:主要告警数量
+			|_alerts:告警列表(数组)
+			|	|_alertType:告警类型
+			|	|_occurtime:告警时间
+			|	|_severity:告警级别，1为严重，2为主要
+			|___|_title:告警内容
 		
 返回示例：
+{
+	"screenId": "alertScreen",
+	"childId": "0",
+	"type": "all",
+	"data": {
+		"screenName": "告警",
+		"sysAlerts": {
+			"san": 4,
+			"man": 2,
+			"alerts": [
+				{
+					"alertType": "系统类",
+					"occurtime": "2019/2/25 11:17",
+					"severity": 1,
+					"title": "测试告警"
+				},
+				{
+					"alertType": "系统类",
+					"occurtime": "2019/2/25 11:17",
+					"severity": 1,
+					"title": "测试告警1"
+				}
+			]
+		},
+		"appAlerts": {
+			"san": 2,
+			"man": 3,
+			"alerts": [
+				{
+					"alertType": "应用类",
+					"occurtime": "2019/2/25 11:17",
+					"severity": 2,
+					"title": "测试告警6"
+				},
+				{
+					"alertType": "应用类",
+					"occurtime": "2019/2/25 11:17",
+					"severity": 1,
+					"title": "测试告警7"
+				}
+			]
+		}
+	}
+}
