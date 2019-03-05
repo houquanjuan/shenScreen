@@ -1,0 +1,60 @@
+屏幕位置：右三
+屏幕名称：现货业务概况
+接口名称：现货业务概况信息推送
+接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=businessResultScreen
+请求方式：websocket
+传参：
+传参示例：
+返回参数：JSON字符串
+		固定参数：
+		screenId:屏号
+		childId:子屏幕
+		data:返回给大屏的数据
+		data数据：
+		screenName:屏幕名称
+		datas:各项数据(数组)
+			|_name:概况名称
+			|_unit:单位
+			|_dataName:名下分类(数组)
+			|_data:数值(数组)
+				|_(数组)按顺序对应分类的数值
+{
+	"screenId": "businessResultScreen",
+	"childId": "0",
+	"type": "",
+	"data": {
+		"screenName": "现货业务概况",
+		"datas": [
+			{
+				"name": "清算笔数",
+				"unit": "笔",
+				"dataName": ["A股","港股"],
+				"data": [["20000"],["10000"]]
+			},
+			{
+				"name": "清算金额",
+				"unit": "元",
+				"dataName": ["A股","港股"],
+				"data": [["200000000000"],["100000000000"]]
+			},
+			{
+				"name": "RTGS实时交收笔数",
+				"unit": "笔",
+				"dataName": ["RTGS实时交收笔数"],
+				"data": [["500000"]]
+			},
+			{
+				"name": "非交易委托笔数",
+				"unit": "笔",
+				"dataName": ["非交易委托笔数"],
+				"data": [["100000"]]
+			},
+			{
+				"name": "D-COM通道活动/启动数量",
+				"unit": "个",
+				"dataName": ["D-COM通道活动/启动数量","D-COM通道活动/启动数量"],
+				"data": [["50","100"],["50","100"]]
+			}
+		]
+	}
+}
