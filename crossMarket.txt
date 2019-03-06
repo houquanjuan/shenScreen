@@ -1,0 +1,46 @@
+屏幕位置：右一
+屏幕名称：跨市场业务
+接口名称：跨市场业务消息推送
+接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=crossMarketScreen
+请求方式：websocket
+传参：
+传参示例：
+返回参数：JSON字符串
+		固定参数：
+		screenId:屏号
+		childId:子屏幕
+		data:返回给大屏的数据
+		data数据：
+		screenName:屏幕名称
+		fundsAllocation:三地资金互划
+			|_into:提款金额
+			|_output:入款金额
+		crossMarket:跨市场转托管
+			|_zhaiQuan:债券
+				|_into:转入份额
+				|_output:转出份额
+			|_jijin:基金
+				|_into:转入
+				|_output:转出
+{
+	"screenId": "crossMarketScreen",
+	"childId": "0",
+	"type": "",
+	"data": {
+		"screenName": "跨市场业务",
+		"fundsAllocation": {
+			"into": "2000000000",
+			"output": "1500000000"
+		},
+		"crossMarket": {
+			"zhaiQuan": {
+				"into": "20000000000",
+				"output": "300000000000"
+			},
+			"jiJin": {
+				"into": "40000000000",
+				"output": "20000000000"
+			}
+		}
+	}
+}
