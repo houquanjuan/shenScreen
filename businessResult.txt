@@ -23,6 +23,7 @@
 		dcom:D-COM通道活动/启动数量
 			|_exeCount:通道活动
 			|_allCount:启动数量
+JSON示例：
 {
 	"screenId": "businessResultScreen",
 	"childId": "0",

@@ -1,7 +1,7 @@
 屏幕位置：右一
 屏幕名称：跨市场业务
 接口名称：跨市场业务消息推送
-接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=crossMarketScreen
+接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=businessResultScreen
 请求方式：websocket
 传参：
 传参示例：
@@ -22,8 +22,9 @@
 			|_jijin:基金
 				|_into:转入
 				|_output:转出
+JSON示例：
 {
-	"screenId": "crossMarketScreen",
+	"screenId": "businessResultScreen",
 	"childId": "0",
 	"type": "",
 	"data": {
