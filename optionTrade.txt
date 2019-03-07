@@ -1,0 +1,57 @@
+屏幕位置：右三
+屏幕名称：期权交易
+接口名称：三地交易信息推送
+接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=businessResultScreen
+请求方式：websocket
+传参：
+传参示例：
+返回参数：JSON字符串
+		固定参数：
+		screenId:屏号
+		childId:子屏幕
+		data:返回给大屏的数据
+		data数据：
+		screenName:屏幕名称
+		exchangeCash:出入金交易
+			|_actualCount:实时入金笔数
+			|_actualFunds:实时入金金额
+			|_orderCount:预约出金笔数
+			|_orderFunds:预约出金金额
+		tradeData:期权交易
+			|_dealCount
+			|_dealFunds
+			|_cleanCount
+			|_cleanFunds
+			|_holdCount
+			|_todayHoldCount
+			|_subscribeCount
+			|_buyCount
+			|_combinDelegats
+			|_combinCleans
+JSON示例：
+{
+	"screenId": "businessResultScreen",
+	"childId": "0",
+	"type": "",
+	"data": {
+		"screenName": "期权交易",
+		"exchangeCash": {
+			"actualCount": "10000",
+			"actualFunds": "3000000000",
+			"orderCount": "10000",
+			"orderFunds": "400000000"
+		},
+		"tradeData": {
+			"dealCount": "10000",
+			"dealFunds": "200000000",
+			"cleanCount": "10000",
+			"cleanFunds": "40000000",
+			"holdCount": "10000",
+			"todayHoldCount": "10000",
+			"subscribeCount": "10000",
+			"buyCount": "10000",
+			"combinDelegats": "10000",
+			"combinCleans": "10000"
+		}
+	}
+}
