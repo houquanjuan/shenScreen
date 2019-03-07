@@ -18,16 +18,16 @@
 			|_orderCount:预约出金笔数
 			|_orderFunds:预约出金金额
 		tradeData:期权交易
-			|_dealCount
-			|_dealFunds
-			|_cleanCount
-			|_cleanFunds
-			|_holdCount
-			|_todayHoldCount
-			|_subscribeCount
-			|_buyCount
-			|_combinDelegats
-			|_combinCleans
+			|_dealCount:成交笔数
+			|_dealFunds:成交金额
+			|_cleanCount:清算笔数
+			|_cleanFunds:清算金额
+			|_holdCount:持仓变动数
+			|_todayHoldCount:今日开仓数
+			|_subscribeCount:认购
+			|_buyCount:认沽
+			|_combinDelegats:组合委托
+			|_combinCleans:组合清算
 JSON示例：
 {
 	"screenId": "businessResultScreen",
