@@ -1,7 +1,7 @@
 屏幕位置：右一
 屏幕名称：核心端口状态
 接口名称：核心端口状态推送
-接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=businessResultScreen
+接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=businessScreen
 请求方式：websocket
 传参：
 传参示例：
