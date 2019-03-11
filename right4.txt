@@ -1,0 +1,119 @@
+屏幕位置：右四
+屏幕名称：现货业务统计
+接口名称：现货业务统计信息推送
+接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=twelveScreen
+请求方式：websocket
+传参：
+传参示例：
+返回参数：JSON字符串
+		固定参数：
+		screenId:屏号
+		childId:子屏幕
+		data:返回给大屏的数据
+		data数据：
+		screenName:屏幕名称
+		RTGSData/DCOMData/noDepute/DCOMDepute:各项数据
+			|_name:统计名称
+			|_unit:单位
+			|_dataName:数据图例名称
+			|_dataTime:数据对应时间
+			|_data:各项数据(数组)
+				|_(数组)数据達
+JSON示例：
+{
+	"screenId": "twelveScreen",
+	"childId": "0",
+	"type": "",
+	"data": {
+		"screenName": "现货业务统计",
+		"RTGSData": {
+			"name": "RTGS实时交收笔数",
+			"unit": "(百)",
+			"dataName": [
+				"RTGS实时交收笔数"
+			],
+			"dataTime": ["2月1日","2月2日","2月3日","2月4日","2月5日"],
+			"data": [[38,58,9,79,78]]
+		},
+		"DCOMData": {
+			"name": "D-COM通道启动数量和活动数量",
+			"unit": "(百)",
+			"dataName": ["启动数量","活动数量"],
+			"dataTime": ["2月1日","2月2日","2月3日","2月4日","2月5日"],
+			"data": [[41,72,52,52,29],[57,91,33,41,98]]
+		},
+		"noDepute": {
+			"name": "非交易委托",
+			"unit": "(百)",
+			"dataName": ["非交易委托"],
+			"dataTime": ["2月1日","2月2日","2月3日","2月4日","2月5日"],
+			"data": [[38,57,27,36,42]]
+		},
+		"DCOMDepute": {
+			"name": "D-COM委托",
+			"unit": "(百)",
+			"dataName": ["D-COM委托"],
+			"dataTime": ["2月1日","2月2日","2月3日","2月4日","2月5日"],
+			"data": [[38,58,27,56,67]]
+		}
+	}
+}
+
+屏幕名称：期权业务统计
+接口名称：期权业务统计信息推送
+传参：
+传参示例：
+返回参数：JSON字符串
+返回参数：JSON字符串
+		固定参数：
+		screenId:屏号
+		childId:子屏幕
+		data:返回给大屏的数据
+		data数据：
+		screenName:屏幕名称
+		exerciseData:行权比例
+			|_name:模块名称
+			|_exeCount:行权份数
+			|_exeProportion:行权比例
+		buyPositions/exerciseMonthData/combinData:各项数据
+			|_name:统计名称
+			|_unit:单位
+			|_dataName:数据图例名称
+			|_dataTime:数据对应时间
+			|_data:各项数据(数组)
+				|_(数组)数据達
+返回JSON示例：
+{
+	"screenId": "twelveScreen",
+	"childId": "0",
+	"type": "",
+	"data": {
+		"screenName": "期权业务统计",
+		"exerciseData": {
+			"name": "行权比例",
+			"exeCount": "10000",
+			"exeProportion": "42"
+		},
+		"buyPositions": {
+			"name": "认沽及认购持仓数",
+			"unit": "",
+			"dataName": ["认沽持仓数","认购持仓数"],
+			"dataTime": ["2月1日","2月2日","2月3日","2月4日","2月5日"],
+			"data": [[38,56,24,53,72],[42,74,52,52,24]]
+		},
+		"exerciseMonthData": {
+			"name": "行权比例月统计",
+			"unit": "%",
+			"dataName": [""],
+			"dataTime": ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],
+			"data": [[6,28,23,26,40,45,35,55,60,62,70,78]]
+		},
+		"combinData": {
+			"name": "组合持仓数",
+			"unit": "万笔",
+			"dataName": ["组合持仓数"],
+			"dataTime": ["2月1日","2月2日","2月3日","2月4日","2月5日"],
+			"data": [[38,56,24,53,72]]
+		}
+	}
+}

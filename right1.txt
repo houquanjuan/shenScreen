@@ -1,0 +1,156 @@
+屏幕位置：右一
+屏幕名称：核心端口状态
+接口名称：核心端口状态推送
+接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=businessScreen
+请求方式：websocket
+传参：
+传参示例：
+返回参数：JSON字符串
+		固定参数：
+		screenId:屏号
+		childId:子屏幕
+		data:返回给大屏的数据
+		data数据：
+		screenName:屏幕名称
+		futianCenter:福田状态的数据
+			|_all:总服务器数
+			|_num:故障服务数
+			|_status:状态，0为正常，1为异常
+		southCenter:南方中心的数据
+			|_all:总服务器数
+			|_num:故障服务数
+			|_status:状态，0为正常，1为异常
+JSON示例：
+{
+	"screenId": "businessScreen",
+	"childId": "0",
+	"type": "",
+	"data": {
+		"screenName": "核心端口状态",
+		"futianCenter": [
+			{
+				"all": 24,
+				"num": 11,
+				"status": 1
+			},
+			{
+				"all": 24,
+				"num": 24,
+				"status": 0
+			}
+		],
+		"southCenter": [
+			{
+				"all": 24,
+				"num": 24,
+				"status": 0
+			},
+			{
+				"all": 24,
+				"num": 21,
+				"status": 1
+			}
+		]
+	}
+}
+
+屏幕名称：交易清算及IPO申购
+接口名称：交易清算及IPO申购信息推送
+传参：
+传参示例：
+返回参数：JSON字符串
+		固定参数：
+		screenId:屏号
+		childId:子屏幕
+		data:返回给大屏的数据
+		data数据：
+		screenName:屏幕名称
+		ag:A股交易清算数据
+			|_name:模块名称
+			|_unit:单位
+			|_dataName:数据曲线名称(数组)
+			|_data:数据(数组)
+				|_(数组)具有等同于dataName数组长度个长度为2的数据数组
+					|_(数组)长度为2的数组，格式为[时间,数值]，若某时间点没有数值，则为[时间，null]
+		gg:格式同ag
+		ipo:格式同ag与gg
+		tdata:T日数据
+			|_t-1:T-1日的发行代码(数组)
+			|_t:T日的发行代码(数组)
+			|_t+1:T+1日的发行代码(数组)
+			|_t+3:T+3日的发行代码(数组)
+{
+	"screenId":"businessScreen",
+	"childId":"0",
+	"type":"",
+	"data":{
+		"screenName":"交易清算及IPO申购",
+		"ashare":{
+			"name":"A股交易清算",
+			"unit":"亿",
+			"dataName":["清算笔数","成交笔数"],
+			"data":[
+				[
+					["11:00","217"],
+					["12:00",null],
+					["13:00",null],
+					["14:00","269"]
+				],
+				[...]
+			]
+		},
+		"gshare":{...},
+		"ipo":{...},
+		"tdata":{
+		"t-1":["101000","230240","100110"],
+		"t":["123569","777965","479044"],
+		"t+3":["134000","869400","128907"],
+		"t+1":["867949","000000","567345"]
+		}
+	}
+}
+
+屏幕名称：跨市场业务
+接口名称：跨市场业务消息推送
+传参：
+传参示例：
+返回参数：JSON字符串
+		固定参数：
+		screenId:屏号
+		childId:子屏幕
+		data:返回给大屏的数据
+		data数据：
+		screenName:屏幕名称
+		fundsAllocation:三地资金互划
+			|_into:提款金额
+			|_output:入款金额
+		crossMarket:跨市场转托管
+			|_zhaiQuan:债券
+				|_into:转入份额
+				|_output:转出份额
+			|_jijin:基金
+				|_into:转入
+				|_output:转出
+JSON示例：
+{
+	"screenId": "businessResultScreen",
+	"childId": "0",
+	"type": "",
+	"data": {
+		"screenName": "跨市场业务",
+		"fundsAllocation": {
+			"into": "2000000000",
+			"output": "1500000000"
+		},
+		"crossMarket": {
+			"zhaiQuan": {
+				"into": "20000000000",
+				"output": "300000000000"
+			},
+			"jiJin": {
+				"into": "40000000000",
+				"output": "20000000000"
+			}
+		}
+	}
+}
