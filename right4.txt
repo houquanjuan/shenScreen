@@ -1,8 +1,113 @@
 屏幕位置：右四
-屏幕名称：现货业务统计
-接口名称：现货业务统计信息推送
+屏幕名称：BPM系统
+接口名称：BPM系统信息推送
 接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=twelveScreen
 请求方式：websocket
+传参：
+传参示例：
+返回参数：JSON字符串
+		固定参数：
+		screenId:屏号
+		childId:子屏幕
+		data:返回给大屏的数据
+		data数据：
+		screenName:屏幕名称
+		futian:福田区块信息
+			|_servers:服务器状态
+				|_EPSP-N
+				|_Redis
+				|_Birt
+				|_BPM-N
+			|_status:服务器状态(数组)
+				|_BPM:(数组)
+				|_EPSP:(数组)
+			nginx:Nginx服务器信息
+				|_EPSP_N
+					|_activeConnections:活动连接数
+					|_watingRequests:等待请求数
+					|_responses:响应信息数
+				|_BPM_N
+					|_activeConnections:活动连接数
+					|_watingRequests:等待请求数
+					|_responses:响应信息数
+		south:
+			|_servers
+				|_EPSP-NB
+				|_Redis
+				|_Birt
+				|_BPM-NB
+			|_status
+				|_BPMBK:(数组)
+				|_EPSPBK:(数组)
+			nginx:Nginx服务器信息
+				|_EPSP_NB
+					|_activeConnections:活动连接数
+					|_watingRequests:等待请求数
+					|_responses:响应信息数
+				|_BPM_NB
+					|_activeConnections:活动连接数
+					|_watingRequests:等待请求数
+					|_responses:响应信息数
+JSON示例：
+{
+	"screenId": "twelveScreen",
+	"childId": "0",
+	"type": "",
+	"data": {
+		"screenName": "BPM系统",
+		"futian": {
+			"servers": {
+				"EPSP-N": 0,
+				"Redis": 0,
+				"Birt": 1,
+				"BPM-N": 0
+			},
+			"status": {
+				"BPM": [0,1,1,0],
+				"EPSP": [0,0,1,0]
+			},
+			"nginx": {
+				"EPSP_N": {
+					"activeConnections": 64,
+					"waitingRequests": 10,
+					"responses": 0
+				},
+				"BPM_N": {
+					"activeConnections": 15,
+					"waitingRequests": 36,
+					"responses": 20
+				}
+			}
+		},
+		"south": {
+			"servers": {
+				"EPSP-NB": 1,
+				"Redis": 0,
+				"Birt": 0,
+				"BPM-NB": 1
+			},
+			"status": {
+				"EPSPBK": [1,0,0,0],
+				"BMPBK": [0,0,0,1]
+			},
+			"nginx": {
+				"EPSP_NB": {
+					"activeConnections": 58,
+					"waitingRequests": 27,
+					"responses": 3
+				},
+				"BPM_NB": {
+					"activeConnections": 31,
+					"waitingRequests": 42,
+					"responses": 14
+				}
+			}
+		}
+	}
+}
+
+屏幕名称：现货业务统计
+接口名称：现货业务统计信息推送
 传参：
 传参示例：
 返回参数：JSON字符串
