@@ -1,7 +1,7 @@
 屏幕位置：右三
-屏幕名称：三地环网
-接口名称：三地环网信息推送
-接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=businessResultScreen
+屏幕名称：RTSP实时清算
+接口名称：RTSP实时清算信息推送
+接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=tenthScreen
 请求方式：websocket
 传参：
 传参示例：
@@ -12,107 +12,69 @@
 		data:返回给大屏的数据
 		data数据：
 		screenName:屏幕名称
-		mqList:MQ数据通道(数组)
-			|_department:部门
-			|_messages:通道消息数
-			|_queueLink:队列连接数
-		ringLinks:环网链路(数组)
-			|_part:连接位置
-			|_cpu:CPU利用率
-			|_mem:内存利用率
-			|_bandwidth:带宽利用率
-				|_beijing:北京
-				|_shanghai:上海
+		titleData:标题数据
+			|_actualClean:实时清算笔数
+			|_sendNums:ITQSSXK发送笔数
+			|_receiveNums:ITQSSXK接收笔数
+		titleChartData:图表数据
+			|_name:模块名称
+			|_unit:单位
+			|_dataName:图例名称
+			|_data:数据(数组)
+				|_(数组)[时间,数值]
 JSON示例：
 {
-	"screenId": "businessResultScreen",
-	"childId": "0",
-	"type": "",
-	"data": {
-		"screenName": "三地环网",
-		"mqList": [
-			{
-				"department": "上海分公司",
-				"messages": 80,
-				"queueLink": 30
-			},
-			{
-				"department": "北京总部",
-				"messages": 80,
-				"queueLink": 30
-			}
-		],
-		"ringLinks": [
-			{
-				"part": "电信环网",
-				"cpu": 50,
-				"mem": 80,
-				"bandwidth": {
-					"beijing": 72,
-					"shanghai": 34
-				}
-			},
-			{
-				"part": "移动环网",
-				"cpu": 64,
-				"mem": 57,
-				"bandwidth": {
-					"beijing": 92,
-					"shanghai": 83
-				}
-			}
-		]
-	}
-}
-
-屏幕名称：现货业务概况
-接口名称：现货业务概况信息推送
-传参：
-传参示例：
-返回参数：JSON字符串
-		固定参数：
-		screenId:屏号
-		childId:子屏幕
-		data:返回给大屏的数据
-		data数据：
-		screenName:屏幕名称
-		cleanCounts:清算笔数
-			|_ashares:A股
-			|_gshares:港股
-		cleanFunds:清算金额
-			|_ashares:A股
-			|_gshares:港股
-		rtgsCounts:RTGS实时交收笔数
-		notChangeCounts:非交易委托笔数
-		dcom:D-COM通道活动/启动数量
-			|_exeCount:通道活动
-			|_allCount:启动数量
-JSON示例：
-{
-	"screenId": "businessResultScreen",
-	"childId": "0",
-	"type": "",
-	"data": {
-		"screenName": "现货业务概况",
-		"cleanCounts": {
-			"ashares": "20000",
-			"gshares": "10000"
+	"screenId":"tenthScreen",
+	"childId":"0",
+	"type":"",
+	"data":{
+		"screenName":"RTSP实时清算",
+		"titleData":{
+			"actualClean":66071,
+			"sendNums":70724,
+			"receiveNums":65803
 		},
-		"cleanFunds": {
-			"ashares": "200000000000",
-			"gshares": "100000000000"
-		},
-		"rtgsCounts": "500000",
-		"notChangeCounts": "100000",
-		"dcom": {
-			"exeCount": "50",
-			"allCount": "100"
+		"titleChartData":{
+			"unit":"(万)",
+			"dataName":["","",""],
+			"data":[
+				[
+					["09:00",1.8],
+					["10:00",2],
+					["11:00",2.2],
+					["12:00",2.6],
+					["13:00",2.7],
+					["14:00",2.9],
+					["15:00",3.2],
+					["16:00",3.6]
+				],
+				[
+					["09:00",1.5],
+					["10:00",2.4],
+					["11:00",2.6],
+					["12:00",2.9],
+					["13:00",3.6],
+					["14:00",3.8],
+					["15:00",4],
+					["16:00",4.2]
+				],
+				[
+					["09:00",1],
+					["10:00",1.5],
+					["11:00",2],
+					["12:00",null],
+					["13:00",null],
+					["14:00",3.2],
+					["15:00",3.6],
+					["16:00",3.8]
+				]
+			]
 		}
 	}
 }
 
-屏幕名称：期权交易
-接口名称：期权交易信息推送
+屏幕名称：期权清算
+接口名称：期权清算信息推送
 传参：
 传参示例：
 返回参数：JSON字符串
@@ -122,46 +84,126 @@ JSON示例：
 		data:返回给大屏的数据
 		data数据：
 		screenName:屏幕名称
-		exchangeCash:出入金交易
-			|_actualCount:实时入金笔数
-			|_actualFunds:实时入金金额
-			|_orderCount:预约出金笔数
-			|_orderFunds:预约出金金额
-		tradeData:期权交易
-			|_dealCount:成交笔数
-			|_dealFunds:成交金额
-			|_cleanCount:清算笔数
-			|_cleanFunds:清算金额
-			|_holdCount:持仓变动数
-			|_todayHoldCount:今日开仓数
-			|_subscribeCount:认购
-			|_buyCount:认沽
-			|_combinDelegats:组合委托
-			|_combinCleans:组合清算
+		cleanCounts/cleanFunds/combines/todayCounts:清算笔数/清算金额/组合委托交易/今日开、平仓数
+			|_name:模块名称
+			|_unit:单位
+			|_dataName:图例名称
+			|_data:数据(数组)
+				|_(数组)[时间,数值]
 JSON示例：
 {
-	"screenId": "businessResultScreen",
-	"childId": "0",
-	"type": "",
-	"data": {
-		"screenName": "期权交易",
-		"exchangeCash": {
-			"actualCount": "10000",
-			"actualFunds": "3000000000",
-			"orderCount": "10000",
-			"orderFunds": "400000000"
+	"screenId":"tenthScreen",
+	"childId":"0",
+	"type":"",
+	"data":{
+		"screenName":"期权清算",
+		"cleanCounts":{
+			"name":"清算笔数",
+			"unit":"(万笔)",
+			"dataName":["成交笔数","清算笔数","持仓变动"],
+			"data":[
+				[
+					["09:00",1.5],
+					["10:00",2],
+					["11:00",2.2],
+					["12:00",2.6],
+					["13:00",2.7],
+					["14:00",2.9],
+					["15:00",3.2],
+					["16:00",3.6]
+				],
+				[
+					["09:00",2],
+					["10:00",2.4],
+					["11:00",2.6],
+					["12:00",2.9],
+					["13:00",3.6],
+					["14:00",3.8],
+					["15:00",4],
+					["16:00",4.2]
+				],
+				[
+					["09:00",1],
+					["10:00",1.5],
+					["11:00",2],
+					["12:00",2.3],
+					["13:00",2.7],
+					["14:00",3.2],
+					["15:00",3.6],
+					["16:00",3.9]
+				]
+			]
 		},
-		"tradeData": {
-			"dealCount": "10000",
-			"dealFunds": "200000000",
-			"cleanCount": "10000",
-			"cleanFunds": "40000000",
-			"holdCount": "10000",
-			"todayHoldCount": "10000",
-			"subscribeCount": "10000",
-			"buyCount": "10000",
-			"combinDelegats": "10000",
-			"combinCleans": "10000"
+		"cleanFunds":{
+			"name":"清算金额",
+			"unit":"(亿元)",
+			"dataName":["成交金额","清算金额"],
+			"data":[
+				[
+					["09:00",1.5],
+					["10:00",2],
+					["11:00",2.2],
+					["12:00",2.6],
+					["13:00",2.7],
+					["14:00",2.9],
+					["15:00",3.2],
+					["16:00",3.6]
+				],
+				[
+					["09:00",1],
+					["10:00",1.5],
+					["11:00",2],
+					["12:00",2.3],
+					["13:00",2.7],
+					["14:00",3.2],
+					["15:00",3.6],
+					["16:00",3.8]
+				]
+			]
+		},
+		"combines":{
+			"name":"组合委托交易",
+			"unit":"(万笔)",
+			"dataName":["委托笔数"],
+			"data":[
+				[
+					["09:00",1.5],
+					["10:00",2],
+					["11:00",null],
+					["12:00",null],
+					["13:00",2.7],
+					["14:00",2.9],
+					["15:00",3.2],
+					["16:00",3.6]
+				]
+			]
+		},
+		"todayCounts":{
+			"name":"今日开、平仓数",
+			"unit":"(张)",
+			"dataName":["开仓数","平仓数"],
+			"data":[
+				[
+					["09:00",1.5],
+					["10:00",2],
+					["11:00",2.2],
+					["12:00",null],
+					["13:00",null],
+					["14:00",2.9],
+					["15:00",3.2],
+					["16:00",3.6]
+				],
+				[
+					["9:00",2],
+					["10:00",2.4],
+					["11:00",2.6],
+					["12:00",2.9],
+					["13:00",3.6],
+					["14:00",3.8],
+					["15:00",4],
+					["16:00",4.2]
+				]
+			]
 		}
 	}
 }
