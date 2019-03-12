@@ -1,8 +1,80 @@
 屏幕位置：右二
+屏幕名称：RTSP实时清算
+接口名称：RTSP实时清算信息推送
+接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=tenthScreen
+请求方式：websocket
+传参：
+传参示例：
+返回参数：JSON字符串
+		固定参数：
+		screenId:屏号
+		childId:子屏幕
+		data:返回给大屏的数据
+		data数据：
+		screenName:屏幕名称
+		titleData:标题数据
+			|_actualClean:实时清算笔数
+			|_sendNums:ITQSSXK发送笔数
+			|_receiveNums:ITQSSXK接收笔数
+		titleChartData:图表数据
+			|_name:模块名称
+			|_unit:单位
+			|_dataName:图例名称
+			|_data:数据(数组)
+				|_(数组)[时间,数值]
+JSON示例：
+{
+	"screenId":"tenthScreen",
+	"childId":"0",
+	"type":"",
+	"data":{
+		"screenName":"RTSP实时清算",
+		"titleData":{
+			"actualClean":66071,
+			"sendNums":70724,
+			"receiveNums":65803
+		},
+		"titleChartData":{
+			"unit":"(万)",
+			"dataName":["","",""],
+			"data":[
+				[
+					["09:00",1.8],
+					["10:00",2],
+					["11:00",2.2],
+					["12:00",2.6],
+					["13:00",2.7],
+					["14:00",2.9],
+					["15:00",3.2],
+					["16:00",3.6]
+				],
+				[
+					["09:00",1.5],
+					["10:00",2.4],
+					["11:00",2.6],
+					["12:00",2.9],
+					["13:00",3.6],
+					["14:00",3.8],
+					["15:00",4],
+					["16:00",4.2]
+				],
+				[
+					["09:00",1],
+					["10:00",1.5],
+					["11:00",2],
+					["12:00",null],
+					["13:00",null],
+					["14:00",3.2],
+					["15:00",3.6],
+					["16:00",3.8]
+				]
+			]
+		}
+	}
+}
+
 屏幕名称：期权清算
 接口名称：期权清算信息推送
-接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=twelveScreen
-请求方式：websocket
 传参：
 传参示例：
 返回参数：JSON字符串
