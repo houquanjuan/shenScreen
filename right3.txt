@@ -13,14 +13,11 @@
 		data数据：
 		screenName:屏幕名称
 		top:拓扑图部分
-			|_futian/south:福田/南方
-				|_servers:服务器状态(数组)，0正常，1异常
-				|_firewalls:防火墙状态(数组)，0正常，1异常
+			|_servers:服务器状态(数组)，0正常，1异常
+			|_firewalls:防火墙状态(数组)，0正常，1异常
 		switch:交换机信息(数组)
-			|_name:交换机名称
-			|_bandwidth:宽带利用率
-				|_porta:端口A
-				|_portb:端口B
+			|_porta:端口A
+			|_portb:端口B
 			|_cpu:CPU利用率
 			|_mem:内存利用率
 JSON示例：
@@ -31,51 +28,33 @@ JSON示例：
 	"data": {
 		"screenName": "结算网拓扑图",
 		"top": {
-			"futian": {
-				"servers": [0,0,0,1,1,0,0,1,0,1],
-				"firewalls": [1,0,0,1]
-			},
-			"south": {
-				"servers": [1,0,0,0,0,0,1,1,0,0],
-				"firewalls": [0,1,0,0]
-			}
+			"servers": [0,0,0,1,1,0,0,1,0,1,1,0,0,1,1,0,0,0,0,0,1,1,0,0,0,1,0,0],
+			"firewalls": [1,0,0,1,0,1,0,0]
 		},
 		"switch": [
 			{
-				"name": "交换机A",
-				"bandwidth": {
-					"porta": "8.43%",
-					"portb": "2.50%"
-				},
-				"cpu": "87.22%",
-				"mem": "28.59%"
+				"porta": "62.89%",
+				"portb": "97.38%",
+				"cpu": "98.24%",
+				"mem": "99.03%"
 			},
 			{
-				"name": "交换机B",
-				"bandwidth": {
-					"porta": "81.30%",
-					"portb": "20.74%"
-				},
-				"cpu": "59.77%",
-				"mem": "36.63%"
+				"porta": "0.46%",
+				"portb": "5.21%",
+				"cpu": "24.65%",
+				"mem": "7.62%"
 			},
 			{
-				"name": "交换机C",
-				"bandwidth": {
-					"porta": "3.86%",
-					"portb": "9.40%"
-				},
-				"cpu": "35.40%",
-				"mem": "48.82%"
+				"porta": "64.16%",
+				"portb": "97.94%",
+				"cpu": "97.21%",
+				"mem": "92.22%"
 			},
 			{
-				"name": "交换机D",
-				"bandwidth": {
-					"porta": "37.92%",
-					"portb": "43.11%"
-				},
-				"cpu": "1.81%",
-				"mem": "79.71%"
+				"porta": "69.47%",
+				"portb": "70.71%",
+				"cpu": "45.14%",
+				"mem": "13.57%"
 			}
 		]
 	}
