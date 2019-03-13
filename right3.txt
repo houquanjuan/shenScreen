@@ -1,8 +1,31 @@
 屏幕位置：右三
-屏幕名称：RTSP实时清算
-接口名称：RTSP实时清算信息推送
+屏幕名称：结算网拓扑图
+接口名称：结算网拓扑图推送
 接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=tenthScreen
 请求方式：websocket
+传参：
+传参示例：
+返回参数：JSON字符串
+		固定参数：
+		screenId:屏号
+		childId:子屏幕
+		data:返回给大屏的数据
+		data数据：
+		screenName:屏幕名称
+		top:拓扑图部分
+			|_futian/south:福田/南方
+				|_servers:服务器状态(数组)
+				|_firewalls:防火墙状态(数组)
+		switch:交换机信息(数组)
+			|_name:交换机名称
+			|_bandwidth:宽带利用率
+				|_porta:端口A
+				|_portb:端口B
+			|_cpu:CPU利用率
+			|_mem:内存利用率
+
+屏幕名称：RTSP实时清算
+接口名称：RTSP实时清算信息推送
 传参：
 传参示例：
 返回参数：JSON字符串
