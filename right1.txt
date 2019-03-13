@@ -1,36 +1,8 @@
 屏幕位置：右一
-屏幕名称：结算网拓扑图
-接口名称：结算网拓扑图推送
-接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=businessScreen
-请求方式：websocket
-传参：
-传参示例：
-返回参数：JSON字符串
-		固定参数：
-		screenId:屏号
-		childId:子屏幕
-		data:返回给大屏的数据
-		data数据：
-		screenName:屏幕名称
-		top:拓扑图部分
-			|_futian/south:福田/南方
-				|_terminate:终端分区(数组)
-				|_ttcfirewall:终端分区与核心交换的防火墙(数组)
-				|_core:核心交换(数组)
-				|_shencom:深交所(数组)
-				|_application:应用分区(数组)
-				|_ctbfirewall:核心交换与数据库分区的防火墙(数组)
-				|_database:数据库分区(数组)
-		switch:交换机信息(数组)
-			|_name:交换机名称
-			|_bandwidth:宽带利用率
-				|_porta:端口A
-				|_portb:端口B
-			|_cpu:CPU利用率
-			|_mem:内存利用率
-
 屏幕名称：核心端口状态
 接口名称：核心端口状态推送
+接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=businessScreen
+请求方式：websocket
 传参：
 传参示例：
 返回参数：JSON字符串
