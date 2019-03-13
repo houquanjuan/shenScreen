@@ -1,0 +1,30 @@
+屏幕位置：参观模式
+屏幕名称：参观模式
+接口名称：参观模式信息推送
+接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=viewModeScreen
+请求方式：websocket
+传参：
+传参示例：
+返回参数：JSON字符串
+		固定参数：
+		screenId:屏号
+		childId:子屏幕
+		data:返回给大屏的数据
+		data数据：
+		screenName:屏幕名称
+		system:故障系统
+			|_fuTian:福田故障系统(数组)
+			|_southCenter:南方故障系统(数组)
+JSON示例：
+{
+	"screenId": "viewModeScreen",
+	"childId": "0",
+	"type": "",
+	"data": {
+		"screenName": "参观模式",
+		"system": {
+			"fuTian": ["港股通登记结算系统","综合结算系统","期权结算系统","投资人业务平台","发行人业务平台"],
+			"southCenter": ["期权结算系统","现货登记结算系统","参与人业务平台"]
+		}
+	}
+}
