@@ -133,7 +133,7 @@ JSON示例：
 				|_output:转出
 JSON示例：
 {
-	"screenId": "businessResultScreen",
+	"screenId": "businessScreen",
 	"childId": "0",
 	"type": "",
 	"data": {
