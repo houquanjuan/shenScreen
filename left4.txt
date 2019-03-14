@@ -1,7 +1,7 @@
 屏幕位置：左四
 
 额外接口：获取访问区域
-接口地址：http://localhost:8080/ultraJShow/part.do?method=part
+接口地址：http://192.168.1.123:8080/ultraJShow/part.do?method=part
 请求方式：post
 传参：
 传参示例：
@@ -22,7 +22,8 @@
 		data:返回给大屏的数据
 		data数据：
 		screenName:屏幕名称
-		ssaraData/ssarbData:SSRA795(数组)(同时推送)
+		state:A/B
+		ssarData:SSRA795(数组)(同时推送)
 			|_name
 			|_value
 		systemData:系统作业数
@@ -41,13 +42,10 @@
 	"type":"",
 	"data":{
 		"screenName":"主机性能状态",
-		"ssaraData":[
+		"state":"A",
+		"ssarData":[
 			{"name":"CPU","value":"11.1"},
 			{"name":"ASP","value":"37.8"}
-		],
-		"ssarbData":[
-			{"name":"CPU","value":"12.1"},
-			{"name":"ASP","value":"68.3"}
 		],
 		"systemData":{
 			"name":"",
