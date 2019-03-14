@@ -1,4 +1,14 @@
-屏幕位置：左三
+屏幕位置：左四
+
+额外接口：获取访问区域
+接口地址：http://localhost:8080/ultraJShow/part.do?method=part
+请求方式：post
+传参：
+传参示例：
+返回参数：字符串
+返回值：  futian/south
+接口说明：websocket将同时推送两种数据，在进入页面时调用此接口，获得屏幕所在区域futian或south。
+
 屏幕名称：主机性能状态
 接口名称：主机性能状态数据推送
 接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=RTSPNodeScreen
@@ -12,7 +22,7 @@
 		data:返回给大屏的数据
 		data数据：
 		screenName:屏幕名称
-		ssarData:SSRA795A(数组)
+		ssaraData/ssarbData:SSRA795(数组)(同时推送)
 			|_name
 			|_value
 		systemData:系统作业数
@@ -31,9 +41,13 @@
 	"type":"",
 	"data":{
 		"screenName":"主机性能状态",
-		"ssarData":[
+		"ssaraData":[
 			{"name":"CPU","value":"11.1"},
 			{"name":"ASP","value":"37.8"}
+		],
+		"ssarbData":[
+			{"name":"CPU","value":"12.1"},
+			{"name":"ASP","value":"68.3"}
 		],
 		"systemData":{
 			"name":"",
