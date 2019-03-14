@@ -1,4 +1,4 @@
-屏幕位置：左三
+屏幕位置：左二
 屏幕名称：RTSP数据库
 接口名称：DB2数据库性能推送
 接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=RTSPDBScreen 

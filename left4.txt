@@ -1,0 +1,78 @@
+屏幕位置：左三
+屏幕名称：主机性能状态
+接口名称：主机性能状态数据推送
+接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=RTSPNodeScreen
+请求方式：websocket
+传参：
+传参示例：
+返回参数：JSON字符串
+		固定参数：
+		screenId:屏号
+		childId:子屏幕
+		data:返回给大屏的数据
+		data数据：
+		screenName:屏幕名称
+		ssarData:SSRA795A(数组)
+			|_name
+			|_value
+		systemData:系统作业数
+			|_name:统计名称
+			|_unit:单位
+			|_dataName:数据图例名称
+			|_dataTime:数据对应时间
+			|_data:各项数据(数组)
+				|_(数组)数据達
+		messageReply:(数组)
+		messageNotReply:(数组)
+返回示例：
+{
+	"screenId":"RTSPNodeScreen",
+	"childId":"0",
+	"type":"",
+	"data":{
+		"screenName":"主机性能状态",
+		"ssarData":[
+			{"name":"CPU","value":"11.1"},
+			{"name":"ASP","value":"37.8"}
+		],
+		"systemData":{
+			"name":"",
+			"unit":"",
+			"dataName":[""],
+			"data":[
+				[
+					["09:00",3026],
+					["09:05",3023],
+					["09:10",3021],
+					["09:15",3020],
+					["09:20",3028],
+					["09:25",3024]
+				]
+			]
+		},
+		"messageReply":[
+			"There comes a time, when we should heeding certain calls. ",
+			"'Cause the world, it seems right in this line.  ",
+			"But there's a chance for taking, in needing our own life. ",
+			"It seems we need nothing at all.  ",
+			"I use to feel that I should give away my heart. ",
+			"'Cause you know that they needing in them. "
+		],
+		"messageNotReply":[
+			"Then I read the headline, and it said that dying there. ",
+			"It seems that we must heeding instead.  ",
+			"We are the world, we are the children. ",
+			"We are the ones who make a brighter day, so let's start giving. ",
+			"But there chance for taking, we're taking our own lifes. ",
+			"It's true we make brighter day just you and me. ",
+			"Give me your heart, then you will see that someone cares. ",
+			"'Cause you know that they can feed them all. ",
+			"Then I read the paper, and it said that you've been denied ",
+			"And it showed the second we will call. ",
+			"We are the world, we are the children. ",
+			"We are the ones who make a brighter day, so let's start giving. ",
+			"But there chance for taking, we're taking our own lifes. ",
+			"It's true we make brighter day just you and me. "
+		]
+	}
+}

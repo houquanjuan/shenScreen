@@ -1,4 +1,4 @@
-屏幕位置：左二
+屏幕位置：左三
 屏幕名称：告警
 接口名称：告警信息推送
 接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=alertScreen
