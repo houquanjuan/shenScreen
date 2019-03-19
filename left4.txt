@@ -9,10 +9,41 @@
 返回值：  futian/south
 接口说明：websocket将同时推送两种数据，在进入页面时调用此接口，获得屏幕所在区域futian或south。
 
-屏幕名称：主机性能状态
-接口名称：主机性能状态数据推送
+屏幕名称：RTSP服务节点
+接口名称：RTSP服务节点状态推送
 接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=RTSPNodeScreen
 请求方式：websocket
+传参：
+传参示例：
+返回参数：JSON字符串
+		固定参数：
+		screenId:屏号
+		childId:子屏幕
+		data:返回给大屏的数据
+		data数据：
+		screenName:屏幕名称
+		nodeList:节点状态列表(数组)
+		servers:服务器数量
+		maxServers:服务器总数
+		services:服务数量
+		maxServices:服务总数
+返回示例：
+{
+	"screenId": "RTSPNodeScreen",
+	"childId": "0",
+	"type": "",
+	"data": {
+		"screenName": "RTSP服务节点",
+		"nodeList": [0,1,1,0,0,0,0,2,1,2,0,1,1,0,0,2,2,0,0,2,0,2,1,0,0,1,2,0,0,2],
+		"servers": 5,
+		"maxServers": 11,
+		"services": 172,
+		"maxServices": 200
+	}
+}
+
+屏幕名称：主机性能状态
+接口名称：主机性能状态数据推送
 传参：
 传参示例：
 返回参数：JSON字符串
@@ -84,7 +115,7 @@
 			"We are the world, we are the children. ",
 			"We are the ones who make a brighter day, so let's start giving. ",
 			"But there chance for taking, we're taking our own lifes. ",
-			"It's true we make brighter day just you and me. "
+			"It's true we make brighter day just you and me. " 
 		]
 	}
 }
