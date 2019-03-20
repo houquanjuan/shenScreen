@@ -9,8 +9,8 @@
 返回值：  futian/south
 接口说明：websocket将同时推送两种数据，在进入页面时调用此接口，获得屏幕所在区域futian或south。
 
-屏幕名称：RTSP服务节点
-接口名称：RTSP服务节点状态推送
+屏幕名称：RTSP/OPSP服务节点
+接口名称：RTSP/OPSP服务节点状态推送
 接口地址：ws://192.168.1.123:8080/ultraJShow/iwebsocket?id=RTSPNodeScreen
 请求方式：websocket
 传参：
@@ -22,7 +22,7 @@
 		data:返回给大屏的数据
 		data数据：
 		screenName:屏幕名称
-		nodeList:节点状态列表(数组)
+		nodeList:节点状态列表(数组),0正常，1停止，2阻塞
 		servers:服务器数量
 		maxServers:服务器总数
 		services:服务数量
