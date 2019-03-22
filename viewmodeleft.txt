@@ -13,76 +13,108 @@
 		data数据：
 		screenName:屏幕名称
 		xianhuo:现货实时交易
-			|_cleanCounts:清算笔数
-				|_ashares:A股
-				|_gshares:港股
-			|_cleanFunds:清算金额
-				|_ashares:A股
-				|_gshares:港股
-			|_rtgsCounts:RTGS实时交收笔数
-			|_notChangeCounts:非交易委托笔数
-			|_dcom:D-COM通道活动/启动数量
-				|_exeCount:通道活动
-				|_allCount:启动数量
+			|_cleanNum/threePlace/_cleanFund:清算笔数/清算金额/三地资金互划(数组)
+				|_dataName
+				|_unit
+				|_data
 		qiquan:期权实时交易
-			|_exchangeCash:出入金交易
-				|_actualCount:实时入金笔数
-				|_actualFunds:实时入金金额
-				|_orderCount:预约出金笔数
-				|_orderFunds:预约出金金额
-			|_tradeData:期权交易
-				|_dealCount:成交笔数
-				|_dealFunds:成交金额
-				|_cleanCount:清算笔数
-				|_cleanFunds:清算金额
-				|_holdCount:持仓变动数
-				|_todayHoldCount:今日开仓数
-				|_subscribeCount:认购
-				|_buyCount:认沽
-				|_combinDelegats:组合委托
-				|_combinCleans:组合清算
+			|_trade/openTrade/fundTrade/preTrade:出入金交易/开平仓交易/入金交易/预约出金交易
+				|_dataName
+				|_unit
+				|_data
 返回示例：	
 {
 	"screenId": "viewModeLeftScreen",
 	"childId": "0",
 	"type": "",
 	"data": {
-		"screenName": "参观模式",
 		"xianhuo": {
-			"cleanCounts": {
-				"ashares": 20000,
-				"gshares": 10000
-			},
-			"cleanFunds": {
-				"ashares": 2147483647,
-				"gshares": 2147483647
-			},
-			"rtgsCounts": "500000",
-			"notChangeCounts": "100000",
-			"dcom": {
-				"exeCount": 50,
-				"allCount": 100
-			}
+			"cleanNum": [
+				{
+					"dataName": "A股",
+					"unit": "笔",
+					"data": "20000"
+				},
+				{
+					"dataName": "港股",
+					"unit": "笔",
+					"data": "10000"
+				}
+			],
+			"cleanFund": [
+				{
+					"dataName": "A股",
+					"unit": "元",
+					"data": "1000000000"
+				},
+				{
+					"dataName": "港股",
+					"unit": "元",
+					"data": "2000000000"
+				}
+			],
+			"threePlace": [
+				{
+					"dataName": "提款金额",
+					"unit": "元",
+					"data": "200000000"
+				},
+				{
+					"dataName": "入款金额",
+					"unit": "元",
+					"data": "100000000"
+				}
+			]
 		},
 		"qiquan": {
-			"exchangeCash": {
-				"actualCount": 10000,
-				"actualFunds": 2147483647,
-				"orderCount": 10000,
-				"orderFunds": 400000000
-			},
-			"tradeData": {
-				"dealCount": 10000,
-				"dealFunds": 200000000,
-				"cleanCount": 10000,
-				"cleanFunds": 40000000,
-				"holdCount": 10000,
-				"todayHoldCount": 10000,
-				"subscribeCount": 10000,
-				"buyCount": 10000,
-				"combinDelegats": 10000,
-				"combinCleans": 10000
-			}
+			"trade": [
+				{
+					"dataName": "清算笔数",
+					"unit": "笔",
+					"data": "20000"
+				},
+				{
+					"dataName": "清算金额",
+					"unit": "元",
+					"data": "10000"
+				}
+			],
+			"openTrade": [
+				{
+					"dataName": "今日开仓",
+					"unit": "元",
+					"data": "150000000"
+				},
+				{
+					"dataName": "今日平仓",
+					"unit": "元",
+					"data": "250000000"
+				}
+			],
+			"fundTrade": [
+				{
+					"dataName": "笔数",
+					"unit": "笔",
+					"data": "10000000"
+				},
+				{
+					"dataName": "金额",
+					"unit": "元",
+					"data": "214748364749"
+				}
+			],
+			"preTrade": [
+				{
+					"dataName": "笔数",
+					"unit": "笔",
+					"data": "65355120"
+				},
+				{
+					"dataName": "金额",
+					"unit": "元",
+					"data": "314159265358"
+				}
+			]
 		}
 	}
 }
