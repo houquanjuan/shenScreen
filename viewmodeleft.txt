@@ -1,0 +1,88 @@
+屏幕位置：参观模式
+屏幕名称：参观模式
+接口名称：参观模式信息推送
+接口地址：ws://192.168.1.123:8080/UltraMSS/iwebsocket?id=viewModeLeftScreen
+请求方式：websocket
+传参：
+传参示例：
+返回参数：JSON字符串
+		固定参数：
+		screenId:屏号
+		childId:子屏幕
+		data:返回给大屏的数据
+		data数据：
+		screenName:屏幕名称
+		xianhuo:现货实时交易
+			|_cleanCounts:清算笔数
+				|_ashares:A股
+				|_gshares:港股
+			|_cleanFunds:清算金额
+				|_ashares:A股
+				|_gshares:港股
+			|_rtgsCounts:RTGS实时交收笔数
+			|_notChangeCounts:非交易委托笔数
+			|_dcom:D-COM通道活动/启动数量
+				|_exeCount:通道活动
+				|_allCount:启动数量
+		qiquan:期权实时交易
+			|_exchangeCash:出入金交易
+				|_actualCount:实时入金笔数
+				|_actualFunds:实时入金金额
+				|_orderCount:预约出金笔数
+				|_orderFunds:预约出金金额
+			|_tradeData:期权交易
+				|_dealCount:成交笔数
+				|_dealFunds:成交金额
+				|_cleanCount:清算笔数
+				|_cleanFunds:清算金额
+				|_holdCount:持仓变动数
+				|_todayHoldCount:今日开仓数
+				|_subscribeCount:认购
+				|_buyCount:认沽
+				|_combinDelegats:组合委托
+				|_combinCleans:组合清算
+返回示例：	
+{
+	"screenId": "viewModeLeftScreen",
+	"childId": "0",
+	"type": "",
+	"data": {
+		"screenName": "参观模式",
+		"xianhuo": {
+			"cleanCounts": {
+				"ashares": 20000,
+				"gshares": 10000
+			},
+			"cleanFunds": {
+				"ashares": 2147483647,
+				"gshares": 2147483647
+			},
+			"rtgsCounts": "500000",
+			"notChangeCounts": "100000",
+			"dcom": {
+				"exeCount": 50,
+				"allCount": 100
+			}
+		},
+		"qiquan": {
+			"exchangeCash": {
+				"actualCount": 10000,
+				"actualFunds": 2147483647,
+				"orderCount": 10000,
+				"orderFunds": 400000000
+			},
+			"tradeData": {
+				"dealCount": 10000,
+				"dealFunds": 200000000,
+				"cleanCount": 10000,
+				"cleanFunds": 40000000,
+				"holdCount": 10000,
+				"todayHoldCount": 10000,
+				"subscribeCount": 10000,
+				"buyCount": 10000,
+				"combinDelegats": 10000,
+				"combinCleans": 10000
+			}
+		}
+	}
+}
