@@ -1,0 +1,51 @@
+接口名称：单屏幕显示接口
+接口地址："http://192.168.1.123:8080/UltraMSS/screen.do?method=screen"
+请求方式：http
+
+传参：screenName
+
+传参实例：
+{
+	screenName: 值班信息
+}
+
+返回参数：对应屏幕的JSON对象。
+
+返回实例：
+{
+	"screenId": "dutyScreen",
+	"childId": "0",
+	"type": "all",
+	"data": {
+		"screenName": "值班信息",
+		"futianDuties": {
+			"daily": [{
+				"department": "值班经理",
+				"name": "霍青娥",
+				"tel": "13559130582"
+			}, {
+				"department": "运维组",
+				"name": "秦心",
+				"tel": "13559130582"
+			}],
+			"night": [{
+				"department": "值班经理",
+				"name": "秋静叶",
+				"tel": "13559130582"
+			}, {
+				"department": "运维组",
+				"name": "铃仙",
+				"tel": "13559130582"
+			}]
+		},
+		"southDuties": [{
+			"department": "值班经理",
+			"name": "丰聪耳",
+			"tel": "13559130582"
+		}, {
+			"department": "运维组",
+			"name": "董风谷",
+			"tel": "13559130582"
+		}]
+	}
+}
