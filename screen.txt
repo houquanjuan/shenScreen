@@ -1,0 +1,26 @@
+接口名称：设置变量
+接口地址："http://192.168.1.123:8080/UltraMSS/screen.do?method=setVar"
+请求方式：http
+
+传参：value
+
+传参实例：
+{
+	value: 1
+}
+
+返回参数：布尔值
+
+返回实例：true/false
+
+接口名称：设置变量
+接口地址："http://192.168.1.123:8080/UltraMSS/screen.do?method=getVar"
+请求方式：http
+
+传参：
+
+传参实例：
+
+返回参数：字符串
+
+返回实例：1(默认)
