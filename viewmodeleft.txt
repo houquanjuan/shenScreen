@@ -10,111 +10,155 @@
 		screenId:屏号
 		childId:子屏幕
 		data:返回给大屏的数据
-		data数据：
-		screenName:屏幕名称
-		xianhuo:现货实时交易
-			|_cleanNum/threePlace/_cleanFund:清算笔数/清算金额/三地资金互划(数组)
-				|_dataName
-				|_unit
-				|_data
-		qiquan:期权实时交易
-			|_trade/openTrade/fundTrade/preTrade:出入金交易/开平仓交易/入金交易/预约出金交易
-				|_dataName
-				|_unit
-				|_data
+		data数据：(数组)
+			|_dataName
+			|_unit
+			|_data
 返回示例：	
 {
 	"screenId": "viewModeLeftScreen",
 	"childId": "0",
 	"type": "",
-	"data": {
-		"xianhuo": {
-			"cleanNum": [
-				{
-					"dataName": "A股",
-					"unit": "笔",
-					"data": "20000"
-				},
-				{
-					"dataName": "港股",
-					"unit": "笔",
-					"data": "10000"
-				}
-			],
-			"cleanFund": [
-				{
-					"dataName": "A股",
-					"unit": "元",
-					"data": "1000000000"
-				},
-				{
-					"dataName": "港股",
-					"unit": "元",
-					"data": "2000000000"
-				}
-			],
-			"threePlace": [
-				{
-					"dataName": "提款金额",
-					"unit": "元",
-					"data": "200000000"
-				},
-				{
-					"dataName": "入款金额",
-					"unit": "元",
-					"data": "100000000"
-				}
-			]
+	"data": [
+		{
+			"dataName": "A股",
+			"unit": "笔",
+			"data": "20000"
 		},
-		"qiquan": {
-			"trade": [
-				{
-					"dataName": "清算笔数",
-					"unit": "笔",
-					"data": "20000"
-				},
-				{
-					"dataName": "清算金额",
-					"unit": "元",
-					"data": "10000"
-				}
-			],
-			"openTrade": [
-				{
-					"dataName": "今日开仓",
-					"unit": "元",
-					"data": "150000000"
-				},
-				{
-					"dataName": "今日平仓",
-					"unit": "元",
-					"data": "250000000"
-				}
-			],
-			"fundTrade": [
-				{
-					"dataName": "笔数",
-					"unit": "笔",
-					"data": "10000000"
-				},
-				{
-					"dataName": "金额",
-					"unit": "元",
-					"data": "214748364749"
-				}
-			],
-			"preTrade": [
-				{
-					"dataName": "笔数",
-					"unit": "笔",
-					"data": "65355120"
-				},
-				{
-					"dataName": "金额",
-					"unit": "元",
-					"data": "314159265358"
-				}
-			]
+		{
+			"dataName": "港股",
+			"unit": "笔",
+			"data": "10000"
+		},
+		{
+			"dataName": "A股",
+			"unit": "元",
+			"data": "1000000000"
+		},
+		{
+			"dataName": "港股",
+			"unit": "元",
+			"data": "2000000000"
+		},
+		{
+			"dataName": "提款金额",
+			"unit": "元",
+			"data": "200000000"
+		},
+		{
+			"dataName": "入款金额",
+			"unit": "元",
+			"data": "100000000"
+		},
+		{
+			"dataName": "清算笔数",
+			"unit": "笔",
+			"data": "20000"
+		},
+		{
+			"dataName": "清算金额",
+			"unit": "元",
+			"data": "10000"
+		},
+		{
+			"dataName": "今日开仓",
+			"unit": "元",
+			"data": "150000000"
+		},
+		{
+			"dataName": "今日平仓",
+			"unit": "元",
+			"data": "250000000"
+		},
+		{
+			"dataName": "笔数",
+			"unit": "笔",
+			"data": "10000000"
+		},
+		{
+			"dataName": "金额",
+			"unit": "元",
+			"data": "214748364749"
+		},
+		{
+			"dataName": "笔数",
+			"unit": "笔",
+			"data": "65355120"
+		},
+		{
+			"dataName": "金额",
+			"unit": "元",
+			"data": "314159265358"
+		},
+		{
+			"dataName": "ashares",
+			"unit": "笔",
+			"data": "20000"
+		},
+		{
+			"dataName": "gshares",
+			"unit": "笔",
+			"data": "10000"
+		},
+		{
+			"dataName": "ashares",
+			"unit": "元",
+			"data": "200000000000"
+		},
+		{
+			"dataName": "gshares",
+			"unit": "元",
+			"data": "100000000000"
+		},
+		{
+			"dataName": "",
+			"unit": "笔",
+			"data": "500000"
+		},
+		{
+			"dataName": "",
+			"unit": "笔",
+			"data": "100000"
+		},
+		{
+			"dataName": "exeCount",
+			"unit": "个",
+			"data": "50"
+		},
+		{
+			"dataName": "allCount",
+			"unit": "个",
+			"data": "100"
+		},
+		{
+			"dataName": "提款金额",
+			"unit": "元",
+			"data": "200000.0"
+		},
+		{
+			"dataName": "入款金额",
+			"unit": "元",
+			"data": "300000.0"
+		},
+		{
+			"dataName": "转入份额",
+			"unit": "张",
+			"data": "100000.0"
+		},
+		{
+			"dataName": "转出份额",
+			"unit": "张",
+			"data": "300000.0"
+		},
+		{
+			"dataName": "转入",
+			"unit": "份",
+			"data": "200000.0"
+		},
+		{
+			"dataName": "转出",
+			"unit": "份",
+			"data": "350000.0"
 		}
-	}
+	]
 }
