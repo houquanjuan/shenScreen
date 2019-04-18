@@ -10,155 +10,90 @@
 		screenId:屏号
 		childId:子屏幕
 		data:返回给大屏的数据
-		data数据：(数组)
-			|_dataName
-			|_unit
-			|_data
+		data数据：
+		screenName:屏幕名称
+		xianhuo:现货实时交易
+			|_cleanNum/threePlace/_cleanFund:清算笔数/清算金额/三地资金互划(数组)
+				|_(数组)
+		qiquan:期权实时交易
+			|_trade/openTrade/fundTrade/preTrade:出入金交易/开平仓交易/入金交易/预约出金交易
+				|_(数组)
+		cross:跨市场业务
+			|_fundsAllocation/jijin/zhaiquan:三地资金互划/基金/债券
+				|_(数组)
+		xianhuoyewu:现货业务概况
+			|_cleanCounts/cleanFunds/rtgsCounts/notChangeCounts/dcom:清算笔数/清算金额/RTGS实时交收笔数/非交易委托笔数/D-COM通道活动&启动数量
 返回示例：	
 {
 	"screenId": "viewModeLeftScreen",
 	"childId": "0",
 	"type": "",
-	"data": [
-		{
-			"dataName": "A股",
-			"unit": "笔",
-			"data": "20000"
+	"data": {
+		"xianhuo": {
+			"cleanNum": [
+				"20000",
+				"10000"
+			],
+			"cleanFund": [
+				"1000000000",
+				"2000000000"
+			],
+			"threePlace": [
+				"200000000",
+				"100000000"
+			]
 		},
-		{
-			"dataName": "港股",
-			"unit": "笔",
-			"data": "10000"
+		"qiquan": {
+			"trade": [
+				"20000",
+				"10000"
+			],
+			"openTrade": [
+				"150000000",
+				"250000000"
+			],
+			"fundTrade": [
+				"10000000",
+				"214748364749"
+			],
+			"preTrade": [
+				"65355120",
+				"314159265358"
+			]
 		},
-		{
-			"dataName": "A股",
-			"unit": "元",
-			"data": "1000000000"
+		"cross": {
+			"fundsAllocation": [
+				null,
+				"200000.0"
+			],
+			"zhaiQuan": [
+				"200000.0",
+				"150000.0"
+			],
+			"jiJin": [
+				"200000.0",
+				"300000.0"
+			]
 		},
-		{
-			"dataName": "港股",
-			"unit": "元",
-			"data": "2000000000"
-		},
-		{
-			"dataName": "提款金额",
-			"unit": "元",
-			"data": "200000000"
-		},
-		{
-			"dataName": "入款金额",
-			"unit": "元",
-			"data": "100000000"
-		},
-		{
-			"dataName": "清算笔数",
-			"unit": "笔",
-			"data": "20000"
-		},
-		{
-			"dataName": "清算金额",
-			"unit": "元",
-			"data": "10000"
-		},
-		{
-			"dataName": "今日开仓",
-			"unit": "元",
-			"data": "150000000"
-		},
-		{
-			"dataName": "今日平仓",
-			"unit": "元",
-			"data": "250000000"
-		},
-		{
-			"dataName": "笔数",
-			"unit": "笔",
-			"data": "10000000"
-		},
-		{
-			"dataName": "金额",
-			"unit": "元",
-			"data": "214748364749"
-		},
-		{
-			"dataName": "笔数",
-			"unit": "笔",
-			"data": "65355120"
-		},
-		{
-			"dataName": "金额",
-			"unit": "元",
-			"data": "314159265358"
-		},
-		{
-			"dataName": "ashares",
-			"unit": "笔",
-			"data": "20000"
-		},
-		{
-			"dataName": "gshares",
-			"unit": "笔",
-			"data": "10000"
-		},
-		{
-			"dataName": "ashares",
-			"unit": "元",
-			"data": "200000000000"
-		},
-		{
-			"dataName": "gshares",
-			"unit": "元",
-			"data": "100000000000"
-		},
-		{
-			"dataName": "",
-			"unit": "笔",
-			"data": "500000"
-		},
-		{
-			"dataName": "",
-			"unit": "笔",
-			"data": "100000"
-		},
-		{
-			"dataName": "exeCount",
-			"unit": "个",
-			"data": "50"
-		},
-		{
-			"dataName": "allCount",
-			"unit": "个",
-			"data": "100"
-		},
-		{
-			"dataName": "提款金额",
-			"unit": "元",
-			"data": "200000.0"
-		},
-		{
-			"dataName": "入款金额",
-			"unit": "元",
-			"data": "300000.0"
-		},
-		{
-			"dataName": "转入份额",
-			"unit": "张",
-			"data": "100000.0"
-		},
-		{
-			"dataName": "转出份额",
-			"unit": "张",
-			"data": "300000.0"
-		},
-		{
-			"dataName": "转入",
-			"unit": "份",
-			"data": "200000.0"
-		},
-		{
-			"dataName": "转出",
-			"unit": "份",
-			"data": "350000.0"
+		"xianhuoyewu": {
+			"cleanCounts": [
+				"20000",
+				"10000"
+			],
+			"cleanFunds": [
+				"200000000000",
+				"100000000000"
+			],
+			"rtgsCounts": [
+				"500000"
+			],
+			"notChangeCounts": [
+				"100000"
+			],
+			"dcom": [
+				"50",
+				"100"
+			]
 		}
-	]
+	}
 }
