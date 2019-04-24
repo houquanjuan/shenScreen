@@ -59,10 +59,20 @@ JSON示例：
 	{
 		"areaNo": 5,
 		"title": "新股发行情况",
-		"xValue": "2018/12",
-		"appFunds": "22",
-		"placeValue": "15",
-		"rengou": "46"
+		"data": [
+			{"xValue": "2018/01","appFunds": "11","placeValue": "2","rengou": "49"},
+			{"xValue": "2018/02","appFunds": "32","placeValue": "22","rengou": "37"},
+			{"xValue": "2018/03","appFunds": "12","placeValue": "9","rengou": "68"},
+			{"xValue": "2018/04","appFunds": "18","placeValue": "12","rengou": "77"},
+			{"xValue": "2018/05","appFunds": "56","placeValue": "30","rengou": "70"},
+			{"xValue": "2018/06","appFunds": "19","placeValue": "9","rengou": "82"},
+			{"xValue": "2018/07","appFunds": "8","placeValue": "7","rengou": "40"},
+			{"xValue": "2018/08","appFunds": "10","placeValue": "9","rengou": "63"},
+			{"xValue": "2018/09","appFunds": "11","placeValue": "9","rengou": "22"},
+			{"xValue": "2018/10","appFunds": "38","placeValue": "27","rengou": "89"},
+			{"xValue": "2018/11","appFunds": "17","placeValue": "2","rengou": "57"},
+			{"xValue": "2018/12","appFunds": "22","placeValue": "15","rengou": "46"}
+		]
 	},
 	{
 		"areaNo": 6,
@@ -74,7 +84,7 @@ JSON示例：
 			{"name": "2015","value": "697588.28"},
 			{"name": "2016","value": "200000"},
 			{"name": "2017","value": "601328"},
-			{"name": "2018""value": "453210"}
+			{"name": "2018","value":"453210"}
 		]
 	},
 	{
