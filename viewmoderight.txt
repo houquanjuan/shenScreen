@@ -130,21 +130,3 @@ JSON示例：
 	values3: ["3", "21", "12", ...]
 }
 返回值：true/false
-
-接口名称：设置参观模式右侧复合统计图
-接口地址：http://192.168.1.123:8080/UltraMSS/viewMode.do?method=setSP
-传参：
-	title: 标题
-	xValues: (数组)横坐标值
-	appFunds: (数组)申购资金
-	placeValues: (数组)家
-	rengou: (数组)认购资金
-传参示例：
-{
-	title: 新股发行情况
-	xValues: ["2018/01", "2018/02", "2018/03", ...],
-	appFunds: ["11", "37", "12", ...],
-	placeValues: ["49", "33", "68", ...],
-	rengou: ["3", "21", "12", ...]
-}
-返回值：true/false
