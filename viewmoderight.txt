@@ -1,0 +1,129 @@
+屏幕位置：参观模式
+屏幕名称：参观模式
+接口名称：参观模式右侧信息推送
+接口地址：http://192.168.1.123:8080/UltraMSS/viewMode.do?method=getPies
+接口地址(WebSocket)：ws://192.168.1.123:8080/UltraMSS/iwebsocket?id=viewRightScreen
+请求方式：post/websocket
+传参：
+传参示例：
+返回参数：JSON字符串
+JSON示例：
+
+[
+	{
+		"areaNo": 1,
+		"title": "深市证券",
+		"subTitle": "当前证券数: 4198只",
+		"data": [
+			{"name": "A股","value": "42.31"},
+			{"name": "B股","value": "1.71"},
+			{"name": "基金","value": "15.70"},
+			{"name": "资产证券化","value": "10.96"},
+			{"name": "债券","value": "22.44"},
+			{"name": "其他","value": "7.43"}
+		]
+	},
+	{
+		"areaNo": 2,
+		"title": "结算参与人",
+		"subTitle": "参与人总数: 193",
+		"data": [
+			{"name": "证券公司","value": "113"},
+			{"name": "信托公司","value": "2"},
+			{"name": "托管银行","value": "32"},
+			{"name": "其他","value": "20"}
+		]
+	},
+	{
+		"areaNo": 3,
+		"title": "股本分布",
+		"subTitle": "总量: 17407.8400亿股",
+		"data": [
+			{"name": "QFII","value": "54.66"},
+			{"name": "基金","value": "9.68"},
+			{"name": "机构","value": "42.87"},
+			{"name": "个人","value": "45.88"}
+		]
+	},
+	{
+		"areaNo": 4,
+		"title": "市值分布",
+		"subTitle": "总量: 204871.3500亿元",
+		"data": [
+			{"name": "QFII","value": "8.22"},
+			{"name": "基金","value": "9.28"},
+			{"name": "机构","value": "41.21"},
+			{"name": "个人","value": "48.6"}
+		]
+	},
+	{
+		"areaNo": 5,
+		"title": "新股发行情况",
+		"xValue": "2018/12",
+		"appFunds": "22",
+		"placeValue": "15",
+		"rengou": "46"
+	},
+	{
+		"areaNo": 6,
+		"title": "历年结算总额",
+		"subTitle": "年结算总额: 126132.3511亿元",
+		"data": [
+			{"name": "2013","value": "400000"},
+			{"name": "2014","value": "697588.28"},
+			{"name": "2015","value": "697588.28"},
+			{"name": "2016","value": "200000"},
+			{"name": "2017","value": "601328"},
+			{"name": "2018""value": "453210"}
+		]
+	},
+	{
+		"areaNo": 7,
+		"title": "历年结算净额",
+		"subTitle": "总量: 3447066.2262亿元",
+		"data": [
+			{"name": "2013","value": "400000"},
+			{"name": "2014","value": "1000000"},
+			{"name": "2015","value": "600000"},
+			{"name": "2016","value": "281200.87"},
+			{"name": "2017","value": "601222"},
+			{"name": "2018","value": "450000"}
+		]
+	}
+]
+
+接口名称：设置参观模式右侧
+接口地址：http://192.168.1.123:8080/UltraMSS/viewMode.do?method=setPies
+传参：
+	area: 标题
+	areaNo: 区域编号(1~7)
+	subTitle: 副标题
+	titles: 数据名(数组)
+	values: 数据(数组)
+传参示例：
+{
+	area: "深市证券",
+	areaNo: "1",
+	subTitle: 当前证券数: 4198只
+	titles: ["A股", "B股", "基金", "债券", "资产证券化", "其他"]
+	values: ["42.31", "1.71", "15.70", "10.96", "22.44", "7.43"]
+}
+返回值：true/false
+
+接口名称：设置参观模式右侧复合统计图
+接口地址：http://192.168.1.123:8080/UltraMSS/viewMode.do?method=setSP
+传参：
+	title: 标题
+	xValues: (数组)横坐标值
+	appFunds: (数组)申购资金
+	placeValues: (数组)家
+	rengou: (数组)认购资金
+传参示例：
+{
+	title: 新股发行情况
+	xValues: ["2018/01", "2018/02", "2018/03", ...],
+	appFunds: ["11", "37", "12", ...],
+	placeValues: ["49", "33", "68", ...],
+	rengou: ["3", "21", "12", ...]
+}
+返回值：true/false
