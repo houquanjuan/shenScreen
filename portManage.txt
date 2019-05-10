@@ -1,6 +1,6 @@
 屏位置：配置页面
 接口名称：核心端口维护：导入核心端口信息
-接口地址："http://192.168.1.123:8080/UltraMSS/port.do?method=insertPort
+接口地址："http://192.168.1.123:8080/UltraMSS/port.do?method=uploadPort
 请求方式：http/POST
 传参：
 file: xls/xlsx 文件
@@ -29,6 +29,8 @@ file:
 	],
 	"south":[...]
 }
+
+
 
 接口名称：核心端口维护：导出核心端口信息
 接口地址："http://192.168.1.123:8080/UltraMSS/port.do?method=exportPort"
