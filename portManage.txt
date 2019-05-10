@@ -1,0 +1,27 @@
+屏位置：配置页面
+接口名称：核心端口维护：导入核心端口信息
+接口地址："http://192.168.1.123:8080/UltraMSS/port.do?method=insertPort
+请求方式：http/POST
+传参：
+file: xls/xlsx 文件
+part: 福田或南方
+参数示例：
+part: south/futian
+file:
+返回值：布尔值
+返回示例：true/false
+
+接口名称：核心端口维护：导出核心端口信息
+接口地址："http://192.168.1.123:8080/UltraMSS/port.do?method=exportPort"
+请求方式：http/POST
+传参：
+part: 福田或南方
+departments: 选择要上传的端口
+参数示例：
+{
+	part:"south",
+	departments:"结算网,业务网,办公内网,信息交换平台,三地环网,办公外网"
+}
+返回值：xls文件或布尔值(失败,false)
+返回示例：
+
